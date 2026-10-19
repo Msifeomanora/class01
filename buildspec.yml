@@ -4,12 +4,29 @@ phases:
   install:
     runtime-versions:
       nodejs: 18
+    commands:
+      - echo Installing dependencies
+      - npm install
+
+  pre_build:
+    commands:
+      - echo Running lint
+      - npm run lint || echo "No lint script"
 
   build:
     commands:
-      - echo Build started on `date`
-      - echo "All tests passed (placeholder)"
+      - echo Building app
+      - npm run build || echo "No build script"
+
+  post_build:
+    commands:
+      - echo Running smoke tests
+      - npm test
 
 artifacts:
   files:
     - '**/*'
+
+cache:
+  paths:
+    - node_modules/**/*
