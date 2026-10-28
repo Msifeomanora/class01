@@ -17,7 +17,7 @@ Resources:
         IndexDocument: index.html
 
   WebsiteBucket2:
-    Type: AWS::S3::Bucket
+    Type: AWS:S3::Bucket
 
 Outputs:
   BucketName:
