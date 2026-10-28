@@ -8,8 +8,6 @@ Parameters:
 
 Resources:
   WebsiteBucket:
-    Type: AWS3::Bucket
-  WebsiteBucket2:
     Type: AWS::S3::Bucket
     Properties:
       BucketName: !Sub 'myapp-website-${Environment}-${AWS::AccountId}'
